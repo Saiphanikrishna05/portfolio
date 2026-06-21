@@ -1,0 +1,235 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Sai Phani Krishna Arumalla",
+    "label": "AI/ML Engineer | LangGraph · RAG · PyTorch · AWS",
+    "email": "saiphanikrishna05@gmail.com",
+    "phone": "+1 (813) 466-2087",
+    "url": "https://github.com/Saiphanikrishna05",
+    "summary": "MS Computer Science candidate at the University of South Florida (GPA: 3.66, May 2026) specializing in production LLM systems, multi-agent orchestration, RAG pipelines, and full-stack AI application development. Builder of three deployed AI systems: DealMind, ArchGuard, and OmniScan Engine, each live and used by real users. Passionate about shipping AI that solves real problems, not just demos.",
+    "location": {
+      "city": "Tampa",
+      "region": "Florida",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "Saiphanikrishna05",
+        "url": "https://github.com/Saiphanikrishna05"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "sai-phani-krishna-arumalla",
+        "url": "https://linkedin.com/in/sai-phani-krishna-arumalla"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "University of South Florida",
+      "area": "Computer Science",
+      "studyType": "Master of Science",
+      "startDate": "2024-08",
+      "endDate": "2026-05",
+      "score": "3.66",
+      "courses": [
+        "Machine Learning",
+        "Deep Learning",
+        "Natural Language Processing",
+        "Distributed Systems",
+        "Applied Artificial Intelligence"
+      ]
+    },
+    {
+      "institution": "CVR College of Engineering",
+      "area": "Information Technology",
+      "studyType": "Bachelor of Technology",
+      "startDate": "2020-12",
+      "endDate": "2024-04",
+      "courses": [
+        "Data Structures and Algorithms",
+        "Database Management Systems",
+        "Software Engineering",
+        "Computer Networks",
+        "Machine Learning Fundamentals"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "DealMind (Independent Project)",
+      "position": "Sole Developer, AI/ML Engineer",
+      "url": "https://deal-mind-ivory.vercel.app",
+      "startDate": "2026-02",
+      "endDate": "2026-03",
+      "summary": "Built and deployed a production multi-agent financial intelligence platform end-to-end. Sole architect, engineer, and maintainer.",
+      "highlights": [
+        "Designed multi-agent orchestration using CrewAI and LangGraph with specialized agents for research, analysis, and synthesis, replacing hours of manual financial due diligence",
+        "Built production RAG pipeline using ChromaDB vector database with document ingestion, chunking strategy optimization, and retrieval tuning for grounded LLM outputs",
+        "Implemented dynamic model routing scoring task complexity to route between Claude and Gemini APIs, reducing inference cost while maintaining output quality",
+        "Built HITL oversight checkpoints flagging low-confidence outputs for human review before finalization",
+        "Instrumented W&B Weave observability tracking hallucination rate, latency, and cost-per-request in production",
+        "Deployed full-stack application: Python/FastAPI backend, React/SSE frontend, Docker, AWS (EC2, S3), CI/CD via GitHub Actions"
+      ],
+      "keywords": ["Python", "FastAPI", "LangGraph", "CrewAI", "Anthropic Claude", "Gemini", "ChromaDB", "RAG", "React", "AWS", "Docker", "W&B Weave", "CI/CD"]
+    },
+    {
+      "name": "ArchGuard (Independent Project)",
+      "position": "Sole Developer, AI/ML Engineer",
+      "url": "https://github.com/Saiphanikrishna05/ArchGuard",
+      "startDate": "2026-03",
+      "endDate": "2026-04",
+      "summary": "Built a production LLM compliance agent that detects architectural drift in codebases and deployed it across three distribution channels used by real engineers.",
+      "highlights": [
+        "Built LangGraph stateful agent that parses codebases via Tree-sitter AST analysis, embeds structural representations in ChromaDB, and reasons over retrieved context to detect compliance violations",
+        "Designed Golden Dataset evaluation benchmark from scratch, implementing LLM-as-judge grading and validating production performance at 0.92 F1-Score and 1.00 Recall",
+        "Built and deployed MCP (Model Context Protocol) server enabling standardized agent-to-tool integration across enterprise developer toolchains",
+        "Distributed as PyPI package, GitHub Action, and MCP server, enabling adoption without workflow changes",
+        "Applied HITL escalation for low-confidence compliance judgments, ensuring high-stakes decisions route to human review"
+      ],
+      "keywords": ["Python", "LangGraph", "ChromaDB", "MCP", "Tree-sitter", "LLM-as-Judge", "PyPI", "GitHub Actions", "Docker"]
+    },
+    {
+      "name": "University of South Florida",
+      "position": "Accessibility Services Student Assistant",
+      "startDate": "2025-12",
+      "endDate": "2026-05",
+      "summary": "Part-time student assistant at USF Disability Services, preprocessing academic documents and configuring assistive technology for students with disabilities.",
+      "highlights": [
+        "Preprocessed 100+ academic documents into structured, machine-readable formats: tagged PDFs, caption files, and semantic annotations, applying document remediation techniques foundational to AI retrieval and assistive NLP systems serving students with visual and cognitive disabilities.",
+        "Translated disability profiles into assistive technology configurations for 50+ students per semester, building hands-on experience in human-centered AI deployment and ADA/Section 508 compliance standards increasingly mandated in enterprise AI products.",
+        "Coordinated adaptive exam environments for students with motor, sensory, and cognitive impairments, ensuring seamless integration of assistive input devices and accessibility software."
+      ],
+      "keywords": ["Document Remediation", "Assistive Technology", "ADA/Section 508", "Tagged PDFs", "Semantic Annotations", "Human-Centered AI", "Accessibility", "NLP"]
+    },
+    {
+      "name": "OmniScan Engine (Independent Project)",
+      "position": "Sole Developer, ML Engineer",
+      "url": "https://omniscan-engine.vercel.app",
+      "startDate": "2026-01",
+      "endDate": "2026-02",
+      "summary": "Built a production multimodal deepfake detection system using PyTorch Vision Transformers and SE-ResNet, deployed on AWS with full-stack interface.",
+      "highlights": [
+        "Trained Vision Transformer (ViT) and SE-ResNet ensemble using PyTorch on multimodal inputs (video, audio, image) for deepfake classification",
+        "Implemented XAI confidence heatmaps for model explainability, surfacing uncertainty visualizations to end users",
+        "Built FastAPI inference API and React frontend with automated PDF audit report generation",
+        "Deployed on AWS (EC2, S3) with Docker containerization and CI/CD automation via GitHub Actions"
+      ],
+      "keywords": ["PyTorch", "Vision Transformer", "SE-ResNet", "Hugging Face", "FastAPI", "React", "AWS", "Docker", "XAI"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Agentic AI & Orchestration",
+      "level": "Advanced",
+      "keywords": ["LangGraph", "CrewAI", "MCP (Model Context Protocol)", "Multi-Agent Orchestration", "Tool Use", "HITL Checkpoints", "Dynamic Model Routing", "Agentic Workflow Design"]
+    },
+    {
+      "name": "LLM & Generative AI",
+      "level": "Advanced",
+      "keywords": ["Anthropic Claude API", "Gemini API", "OpenAI-compatible APIs", "Prompt Engineering", "RAG", "LLM Evaluation", "LLM-as-Judge", "Hallucination Detection", "Fine-Tuning Concepts (LoRA/QLoRA)", "Hugging Face Transformers"]
+    },
+    {
+      "name": "Machine Learning & Deep Learning",
+      "level": "Advanced",
+      "keywords": ["PyTorch", "Scikit-learn", "TensorFlow (familiar)", "Supervised Learning", "Unsupervised Learning", "Computer Vision", "Vision Transformer (ViT)", "SE-ResNet", "Model Evaluation (F1/Precision/Recall/ROC-AUC)", "Experiment Tracking (W&B Weave)"]
+    },
+    {
+      "name": "RAG & Vector Databases",
+      "level": "Advanced",
+      "keywords": ["Retrieval-Augmented Generation", "ChromaDB", "FAISS (familiar)", "Pinecone (familiar)", "Embeddings", "Semantic Search", "Document Ingestion", "Chunking Strategies", "Retrieval Tuning"]
+    },
+    {
+      "name": "Programming Languages",
+      "level": "Advanced",
+      "keywords": ["Python", "JavaScript", "Java", "TypeScript (familiar)", "SQL", "Bash"]
+    },
+    {
+      "name": "Backend & APIs",
+      "level": "Advanced",
+      "keywords": ["FastAPI", "REST API Design", "Server-Sent Events (SSE)", "Pydantic", "PostgreSQL", "MongoDB", "ChromaDB"]
+    },
+    {
+      "name": "Infrastructure & MLOps",
+      "level": "Intermediate",
+      "keywords": ["AWS (EC2, S3)", "Docker", "CI/CD (GitHub Actions)", "Linux", "Git", "W&B Weave", "PyPI", "Vercel"]
+    },
+    {
+      "name": "Frontend",
+      "level": "Intermediate",
+      "keywords": ["React", "JavaScript", "Vite", "Tailwind CSS", "Shadcn UI", "Real-Time SSE Streaming"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "DealMind",
+      "description": "Production multi-agent financial intelligence platform. CrewAI + LangGraph multi-agent orchestration, RAG with ChromaDB, dynamic model routing between Claude and Gemini, HITL oversight, W&B Weave observability. React/SSE frontend, FastAPI backend, deployed on AWS.",
+      "highlights": [
+        "Live at deal-mind-ivory.vercel.app",
+        "Automates financial due diligence workflows end-to-end",
+        "Dynamic model routing reduces inference cost while maintaining quality"
+      ],
+      "keywords": ["LangGraph", "CrewAI", "RAG", "ChromaDB", "Claude", "Gemini", "FastAPI", "React", "AWS", "Docker", "W&B Weave"],
+      "url": "https://deal-mind-ivory.vercel.app",
+      "roles": ["Creator", "Sole Developer"],
+      "type": "application"
+    },
+    {
+      "name": "ArchGuard",
+      "description": "Production LLM compliance agent for detecting architectural drift in codebases. LangGraph stateful agent, Tree-sitter AST parsing, ChromaDB RAG, custom Golden Dataset evaluation (0.92 F1, 1.00 Recall). Deployed as PyPI package, GitHub Action, and MCP server.",
+      "highlights": [
+        "0.92 F1-Score and 1.00 Recall on production benchmark",
+        "Deployed as PyPI package, GitHub Action, and MCP server",
+        "First production MCP server deployment in portfolio"
+      ],
+      "keywords": ["LangGraph", "MCP", "ChromaDB", "Tree-sitter", "LLM-as-Judge", "PyPI", "GitHub Actions", "Python"],
+      "url": "https://github.com/Saiphanikrishna05/ArchGuard",
+      "roles": ["Creator", "Sole Developer"],
+      "type": "application"
+    },
+    {
+      "name": "OmniScan Engine",
+      "description": "Production multimodal deepfake detection system. PyTorch ViT + SE-ResNet ensemble, XAI confidence heatmaps, FastAPI inference API, React frontend, AWS deployment.",
+      "highlights": [
+        "Live at omniscan-engine.vercel.app",
+        "Multimodal: video, audio, and image detection",
+        "XAI heatmaps for model explainability"
+      ],
+      "keywords": ["PyTorch", "Vision Transformer", "SE-ResNet", "Hugging Face", "FastAPI", "React", "AWS", "Docker", "XAI"],
+      "url": "https://omniscan-engine.vercel.app",
+      "roles": ["Creator", "Sole Developer"],
+      "type": "application"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Advanced SQL",
+      "date": "2025-09",
+      "issuer": "Online Certification",
+      "summary": "SQL querying, schema design, and database management"
+    },
+    {
+      "name": "Agile and Scrum Certification",
+      "date": "2025-06",
+      "issuer": "Online Certification",
+      "summary": "Agile methodologies and engineering team collaboration"
+    },
+    {
+      "name": "Deloitte Virtual Certificate",
+      "date": "2025-09",
+      "issuer": "Deloitte",
+      "summary": "Enterprise data analysis, business processes, and professional workflows"
+    }
+  ],
+  "languages": [
+    { "language": "English", "fluency": "Fluent" },
+    { "language": "Telugu", "fluency": "Native" },
+    { "language": "Hindi", "fluency": "Conversational" }
+  ],
+  "meta": {
+    "theme": "custom",
+    "lastModified": "2026-04-18T00:00:00Z",
+    "version": "1.0.0"
+  }
+}

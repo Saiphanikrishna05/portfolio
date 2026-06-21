@@ -1,0 +1,53 @@
+%!TEX program = xelatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{geometry}
+\geometry{top=1.5cm, bottom=1.5cm, left=1.8cm, right=1.8cm}
+
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black}
+
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=*}
+
+\pagestyle{empty}
+
+\begin{document}
+
+%% ── HEADER ────────────────────────────────────────────────────────────────────
+\begin{center}
+  {\Huge \textbf{CANDIDATE_NAME}} \\[4pt]
+  CANDIDATE_LABEL \\[3pt]
+  \small
+  \href{mailto:CANDIDATE_EMAIL}{CANDIDATE_EMAIL} \quad|\quad
+  \href{CANDIDATE_GITHUB_URL}{GitHub} \quad|\quad
+  \href{CANDIDATE_LINKEDIN_URL}{LinkedIn} \quad|\quad
+  CANDIDATE_CITY, CANDIDATE_REGION
+\end{center}
+
+%% ── SUMMARY ──────────────────────────────────────────────────────────────────
+\section{Summary}
+CANDIDATE_SUMMARY
+
+%% ── EDUCATION ────────────────────────────────────────────────────────────────
+\section{Education}
+EDUCATION_BLOCK
+
+%% ── EXPERIENCE ───────────────────────────────────────────────────────────────
+\section{Professional Experience}
+WORK_BLOCK
+
+%% ── SKILLS ───────────────────────────────────────────────────────────────────
+\section{Technical Skills}
+\begin{description}[style=sameline, labelwidth=4cm, leftmargin=4.5cm]
+SKILLS_BLOCK
+\end{description}
+
+\end{document}

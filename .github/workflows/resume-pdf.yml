@@ -1,0 +1,47 @@
+name: Generate Resume PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/resume.json'
+      - 'scripts/resume-template.tex'
+      - 'scripts/generate-latex.py'
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate LaTeX from resume.json
+        run: python scripts/generate-latex.py
+
+      - name: Compile PDF with TeX Live
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          working_directory: .
+          latexmk_use_xelatex: true
+
+      - name: Move PDF to public folder
+        run: |
+          mkdir -p public
+          mv resume.pdf public/resume.pdf
+
+      - name: Commit and push PDF
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/resume.pdf
+          git diff --staged --quiet || git commit -m "chore: regenerate resume.pdf [skip ci]"
+          git push
