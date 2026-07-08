@@ -163,6 +163,20 @@
   ],
   "projects": [
     {
+      "name": "DomainTune",
+      "description": "Fine-tuned Qwen2.5-3B-Instruct on 500 real SEC 10-K EDGAR filings to beat zero-shot GPT-4o on structured financial extraction. QLoRA r=16 + DoRA SFT then DPO alignment on val-set failures. Revenue accuracy: 24% to 86%. All-5-correct: 2% to 20% (10x). Key finding: injecting a [UNIT NOTE] into every training example (amounts in millions, multiply by 1,000,000) drove the biggest accuracy jump, not model scale.",
+      "highlights": [
+        "Revenue accuracy 24% to 86% via one line of data engineering, not model scale",
+        "DPO alignment lifted all-5-fields-correct from 2% to 20% (10x improvement)",
+        "Model published on HuggingFace: saiphanikrishna/domaintune-qwen2.5-3b-sec",
+        "Live demo at domain-tune.vercel.app showing Base vs DPO side-by-side on live tickers"
+      ],
+      "keywords": ["PyTorch", "QLoRA", "DoRA", "DPO", "Unsloth", "HuggingFace TRL", "LLM Fine-tuning", "LLM Evaluation", "LLM-as-Judge", "EDGAR", "SEC", "React", "TypeScript", "Vite", "Tailwind CSS", "Vercel"],
+      "url": "https://domain-tune.vercel.app",
+      "roles": ["Creator", "Sole Developer"],
+      "type": "application"
+    },
+    {
       "name": "DealMind",
       "description": "Production multi-agent financial intelligence platform. CrewAI + LangGraph multi-agent orchestration, RAG with ChromaDB, dynamic model routing between Claude and Gemini, HITL oversight, W&B Weave observability. React/SSE frontend, FastAPI backend, deployed on AWS.",
       "highlights": [

@@ -11,7 +11,19 @@ About Sai:
 - Three deployed AI systems used by real users — not just demos
 
 Projects:
-1. DealMind (Feb–Mar 2026) — Production multi-agent financial intelligence platform
+1. DomainTune (Jun–Jul 2026) — Fine-tuned Qwen2.5-3B-Instruct to beat zero-shot GPT-4o on structured financial extraction
+   - Full domain-adaptation pipeline: 500 real EDGAR SEC 10-K filings, XBRL-sourced numeric labels
+   - SFT: QLoRA r=16 + DoRA on Qwen2.5-3B-Instruct, 200 steps on free Colab T4
+   - DPO: 50 alignment steps from SFT's own val-set failures, β=0.1
+   - Key finding: unit injection ([UNIT NOTE]: amounts in millions, multiply by 1,000,000) drove the biggest accuracy jump — not model scale. Revenue accuracy: 24% → 86%
+   - DPO lifted all-5-fields-correct from 2% → 20% (10×). EPS accuracy: 88% → 98%
+   - Eval: bootstrap CI (n=2000 resamples), ROUGE-1, LLM-as-judge, 95% CI non-overlapping on all numeric fields
+   - Stack: Python, PyTorch, Unsloth, HuggingFace TRL, QLoRA, DoRA, DPO, React, TypeScript, Vite, Tailwind CSS, Vercel
+   - Model on HuggingFace: huggingface.co/saiphanikrishna/domaintune-qwen2.5-3b-sec
+   - Live demo: domain-tune.vercel.app (Base vs DPO side-by-side on live tickers)
+   - Source: github.com/Saiphanikrishna05/DomainTune
+
+2. DealMind (Feb–Mar 2026) — Production multi-agent financial intelligence platform
    - Multi-agent orchestration via CrewAI + LangGraph with specialized research, analysis, and synthesis agents
    - RAG pipeline with ChromaDB: document ingestion, chunking optimization, retrieval tuning
    - Dynamic model routing between Claude and Gemini APIs to optimize cost vs quality
