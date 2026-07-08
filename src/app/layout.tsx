@@ -18,23 +18,24 @@ const geistMono = localFont({
   weight: '100 900',
 })
 
-const resume = getResume()
-
-export const metadata: Metadata = {
-  title: `${resume.basics.name}: ${resume.basics.label}`,
-  description: resume.basics.summary,
-  openGraph: {
-    title: resume.basics.name,
-    description: resume.basics.label,
-    url: resume.basics.url,
-    siteName: resume.basics.name,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: resume.basics.name,
-    description: resume.basics.label,
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const resume = await getResume()
+  return {
+    title: `${resume.basics.name}: ${resume.basics.label}`,
+    description: resume.basics.summary,
+    openGraph: {
+      title: resume.basics.name,
+      description: resume.basics.label,
+      url: resume.basics.url,
+      siteName: resume.basics.name,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: resume.basics.name,
+      description: resume.basics.label,
+    },
+  }
 }
 
 export default function RootLayout({

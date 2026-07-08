@@ -14,7 +14,7 @@ import { Footer } from '@/components/layout/Footer'
 import { ChatWidget } from '@/components/ui/ChatWidget'
 
 export default async function Home() {
-  const resume     = getResume()
+  const resume     = await getResume()
   const repos      = await getPinnedRepos()
   const skills     = deriveSkills(resume.skills, repos)
 

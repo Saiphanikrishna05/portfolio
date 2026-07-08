@@ -2,6 +2,9 @@ import { z } from 'zod'
 import type { Resume } from './types'
 import rawResume from '@/data/resume.json'
 
+const RESUME_RAW_URL =
+  'https://raw.githubusercontent.com/Saiphanikrishna05/portfolio/main/src/data/resume.json'
+
 const profileSchema = z.object({
   network: z.string(),
   username: z.string(),
@@ -79,14 +82,28 @@ const resumeSchema = z.object({
   languages: z.array(languageSchema),
 })
 
-let _resume: Resume | null = null
-
-export function getResume(): Resume {
-  if (_resume) return _resume
-  const result = resumeSchema.safeParse(rawResume)
+function parseResume(data: unknown): Resume {
+  const result = resumeSchema.safeParse(data)
   if (!result.success) {
     throw new Error(`resume.json validation failed:\n${result.error.message}`)
   }
-  _resume = result.data as Resume
-  return _resume
+  return result.data as Resume
+}
+
+// In production: fetch live from GitHub Raw so edits to resume.json on GitHub
+// reflect on the next page load without a Vercel redeploy.
+// In development: use the bundled import (fast, no network needed).
+export async function getResume(): Promise<Resume> {
+  if (process.env.NODE_ENV !== 'production') {
+    return parseResume(rawResume)
+  }
+  try {
+    const res = await fetch(RESUME_RAW_URL, { cache: 'no-store' })
+    if (!res.ok) throw new Error(`GitHub Raw returned ${res.status}`)
+    const json: unknown = await res.json()
+    return parseResume(json)
+  } catch (err) {
+    console.error('Live resume fetch failed, using build-time fallback:', err)
+    return parseResume(rawResume)
+  }
 }
