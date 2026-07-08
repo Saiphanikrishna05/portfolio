@@ -58,6 +58,21 @@
   ],
   "work": [
     {
+      "name": "DomainTune (Independent Project)",
+      "position": "Sole Developer, ML Engineer",
+      "url": "https://domain-tune.vercel.app",
+      "startDate": "2026-06",
+      "endDate": "2026-07",
+      "summary": "Built a full domain-adaptation pipeline fine-tuning Qwen2.5-3B-Instruct on 500 real SEC 10-K EDGAR filings to beat zero-shot GPT-4o on structured financial extraction. Key finding: a single data engineering fix (unit injection) drove the biggest accuracy jump, not model scale.",
+      "highlights": [
+        "Ran SFT with QLoRA r=16 + DoRA on Qwen2.5-3B-Instruct for 200 steps on a free Colab T4, then DPO alignment over 50 steps on the SFT model's own validation-set failures (beta=0.1)",
+        "Discovered and fixed the dominant error source: base model ignored 'amounts in millions' qualifiers in 10-K filings, outputting 60,922 instead of 60,922,000,000. Injecting a [UNIT NOTE] into every training example lifted revenue accuracy from 24% to 86%",
+        "DPO alignment lifted all-five-fields-correct rate from 2% to 20% (10x). EPS within $0.01: 88% to 98%. Validated with bootstrap CI (n=2000), ROUGE-1, and LLM-as-judge; 95% CI non-overlapping on all numeric fields",
+        "Published fine-tuned model to HuggingFace (saiphanikrishna/domaintune-qwen2.5-3b-sec) and built React demo showing Base vs DPO side-by-side on live tickers"
+      ],
+      "keywords": ["PyTorch", "QLoRA", "DoRA", "DPO", "Unsloth", "HuggingFace TRL", "LLM Fine-tuning", "LLM Evaluation", "LLM-as-Judge", "EDGAR", "SEC", "React", "TypeScript", "Vite", "Vercel"]
+    },
+    {
       "name": "DealMind (Independent Project)",
       "position": "Sole Developer, AI/ML Engineer",
       "url": "https://deal-mind-ivory.vercel.app",
